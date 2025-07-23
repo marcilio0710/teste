@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+  html, body {
+  height: 100%;
+  overflow: auto;
+}
+  body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  background-size: cover;
+  height: 100vh; 
+  z-index: 10;        
+}
+main {
+    display: flex;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+header{
+  position: relative; /* <- troque o fixed por relative */
+  width: 100%;
+  background-color: #333;
+  z-index: 1; /* pode até remover se não for necessário */
+}
+.social-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position: relative;
+    align-items: center;
+    background-color: #BACDD9;
+    height: auto;
+    width: 100%;
+    gap: 3rem;
+    padding:15px 50px;    
+}
+.social-icones{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;    
+   text-align: center;   
+   gap: 2rem; 
+   border-radius: 50px;
+   transition: all .3s ease; 
+   margin-left: -24px;    
+}
+.social-link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;  
+    color: #fff;    
+    border-radius: 50%;    
+    width: 32px;
+    height: 32px; 
+    font-size: 22px; 
+    transition: all .3s ease; 
+}
+.social-link:hover{
+  opacity: 0.8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgb(0, 0, 0);
+}
+
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+#facebook {
+  background: linear-gradient(#4267b3);
+}
+#youtube {
+  background: linear-gradient(#FF0033);
+}
+
+.login{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;  
+  border-radius: 20px;
+  width: 20vw;
+  background-color: #4259445e;   
+  border: none;
+  max-width: 100%;   
+  z-index: 10;
+  cursor: pointer;
+  transition: all .3s ease; 
+}
+.login:hover{
+  opacity: 0.8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgb(0, 0, 0);
+}
+.login a{
+  text-decoration: none;
+}
+.texto-login{
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;  
+}
+
+nav{
+  display: flex;  
+  align-items: center;
+  justify-content: space-around;
+  background-color: #516D73;
+  height: 22vh;
+  width: 100%;
+  margin-top:0vh;
+  position: relative;
+  padding: 0 2rem; /* adiciona espaçamento lateral */
+   
+}
+
+.logo{  
+  display: flex;
+  align-items: center;
+  /*margin-left: auto;  empurra para a direita */
+  padding-right: 2rem; /* opcional para espaçamento da borda */
+}
+
+.logo img{
+  height: 110px;
+  width: 110px; 
+  padding-top: 0.7rem;
+  cursor: pointer; 
+}
+
+.logo h1 {
+    font-size: 50px; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    color: #fff; /* Defina a cor do texto que preferir */
+    margin: 0; /* Remover qualquer margem indesejada */
+} 
+.nav-list.ativo {
+  transform: translateX(0);
+}
+.nav-list ul{  
+  display: flex;  
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;     
+  cursor: pointer;
+  padding-left: 0;
+  margin: 0;
+  margin-left: 169px;
+  
+}
+
+.nav-list li{  
+  position: relative;
+    list-style: none; 
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer; 
+    z-index: 10;   
+}
+
+.nav-list a{
+  text-decoration: none;
+  color: #fff;  
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.nav-list a:hover{
+    color: #BACDD9; /* Cor ao passar o mouse */
+}
+
+.icone-home{
+    z-index: 10;
+}
+
+.menu-arrow{
+  font-size: 0.8rem;
+  padding:0.2rem
+}
+
+.nav-list a::after {
+  content: "";                  /* Necessário para pseudo-elemento aparecer */
+  position: absolute;          /* Posiciona em relação ao <a> */
+  background-color: #fff;      /* Cor da linha */
+  height: 2px;                 /* Altura da linha */
+  width: 0;                    /* Começa invisível */
+  left: 50%;                   /* Começa no centro do link */
+  bottom: -6px;                /* Fica abaixo do texto */
+  display: block;              /* Permite definir largura e altura */
+  transition: width 0.3s ease, left 0.3s ease; /* Anima largura e posição */
+}
+
+.nav-list a:hover::after {
+  width: 100%;                 /* Expande linha para toda a largura */
+  left: 0;                     /* Alinha à esquerda */
+}
+
+.texto-matricula{ 
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center; 
+  background-color: #FF0033;
+  height: 40px;
+  width: 130px;
+  text-align: center;
+  border-radius: 8px;
+  border: none; 
+  transition: all .9s ease;
+  z-index: 1;
+}
+.texto-matricula a{
+  transition: all .9s ease;
+}
+.texto-matricula a:hover{
+    color: #000000; /* Cor ao passar o mouse */
+}
+
+
+
+.mobile-menu{
+  display: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.mobile-menu div{
+  background: #fff;
+  width: 32px;
+  height: 2px;
+  margin: 8px;
+  color: #fff; 
+  transition: 0.3s ease;
+ }
+
+
+  .mobile-menu.active div {
+  transition-delay: 0.2s;/*Se quiser que o "X" só apareça depois que o menu abri*/
+  background: #000000;
+}
+.sub-menu{
+  display:grid;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #516d73e5;
+  margin-top: 4px;
+  transform: translateX(-25%);
+  width: 11vw;
+ }
+.has-submenu .sub-menu {
+  display: none;
+}
+
+.has-submenu.active .sub-menu {
+  display: block;
+}
+
+.sub-menu li{
+  margin-bottom: -10px;
+}
+.sub-menu ul{
+  display: block;
+  margin: 0px;
+  padding-left: 0px;
+}
+.sub-menu ul li{
+  width: 220px;
+  width: 100%; /* ou auto */
+  padding: 20px;
+}
+.sub-menu ul li a {
+  display: block;
+  text-align: center;
+  width: 100%;  
+}
+.sub-menu a::after {
+  content: none !important;
+}
+
+h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+a {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #333;
+}

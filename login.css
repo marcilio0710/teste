@@ -1,0 +1,163 @@
+@charset "UTF-08";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;    
+}
+  html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+header{
+  position: relative; /* <- troque o fixed por relative */
+  width: 100%;
+  background-color: #333;
+  z-index: 1; /* pode até remover se não for necessário */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    padding: 100px 20px 100px; /* padding-top igual à altura do header */
+    background: rgb(255, 255, 255) center center;
+    background-size: cover;      
+}
+
+.social-bar{
+    position: relative;
+}
+nav{
+    position: relative;
+    margin-top:0vh;
+    
+}
+.logo h1 {
+    font-size: 50px; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    color: #fff; /* Defina a cor do texto que preferir */
+    margin: 0; /* Remover qualquer margem indesejada */
+
+} 
+
+.container{
+    width: 420px;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #000000;
+    padding: 30px 40px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    backdrop-filter: blur(20px);/*desfoca o fundo do container*/
+    
+   
+}
+.container h1{
+
+    font-size: 36px;
+    text-align: center;
+    color: #000000;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    margin-top: 10px;    
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px 15px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: #000000;
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+}
+
+.remember-forgot{
+    display: flex;/*riar layouts flexíveis, permitindo organizar e alinhar elementos de forma eficiente dentro de um contêiner, */
+    justify-content: space-between;/*joga cada elemento para um lado*/
+    margin: -15px 0 15px;/*-15px em cima, 0 dos lados e 15px embaixo*/
+}
+/* 1 valor - margin: 20px - aplica 20px para todos os lados*/
+/* 2 valores - margin: 20px 30px- aplica 20px para cima e embaixo e aplica 30px para os lados*/
+/* 3 valores - padding: 20px 30px 10px- aplica 20px cima, 30px para os lados e 10px para baixo*/
+/* 4 valores - padding: 20px 30px 10px 5px- aplica 20px para cima, 30px para a direita, 10px para baixo e 5px para a esquerda*/
+
+
+.remember-forgot label{
+    accent-color: rgb(0, 0, 0);/*troca a cor do fundo do quadrado lembrar minha senha*/
+    margin-right: 5px;
+    color: #000;
+}
+
+.remember-forgot a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.login-page{
+    
+    width: 100%;/*ocupa todo o espaço*/
+    height: 50px;
+    background-color:#000000;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight:600;
+    margin-top: 20px;
+    box-shadow: 0px 0 10px rgb(0, 0, 0, .1);
+    
+}
+
+.login-page:hover{
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
+    transition: 0.3s ease;
+}
+
+.register-link{
+    
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+.register-link a:hover{
+    text-decoration: underline;
+}
