@@ -43,7 +43,9 @@ $sobrenome = htmlspecialchars($_SESSION['sobrenome']);
         </div>
         <nav>
             <div class="logo">
-                <a href="#"><img src="assets/cln.png" alt="logo cln"></a>
+                    <a href="index.html">
+                        <h1>Logo</h1>
+                    </a>
             </div>
             <div class="nav-list">
                 <ul>
