@@ -15,7 +15,7 @@ try {
     while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<li>Email: " . htmlspecialchars($linha['email'], ENT_QUOTES, 'UTF-8') . "</li>";
     }
-    echo "  </ul>
+    echo " </ul>
     </body>
     </html>";
 } catch (PDOException $e) {
