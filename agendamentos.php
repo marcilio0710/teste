@@ -100,7 +100,7 @@ try {
     <main>
         <div class="agendamento-container container">
             <h1>Painel de Agendamentos</h1>
-            <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?> (admin)!</p>
+            <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
             <?php if (empty($agendamentos)): ?>
                 <p>Nenhum agendamento encontrado.</p>
             <?php else: ?>
