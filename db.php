@@ -18,4 +18,5 @@ try {
     echo "Erro na conexão com o banco: " . $e->getMessage();
     exit();
 }
+
 ?>
