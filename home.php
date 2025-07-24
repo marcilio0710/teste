@@ -1,11 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['nome'])) {
-    header("Location: login.php");
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Protege: só acessa logado!
+if (!isset($_SESSION['nome']) || !isset($_SESSION['sobrenome'])) {
+    header("Location: login.php?erro=nao_logado");
     exit();
 }
-?>
 
+// Pega os dados, escapando
+$nome      = htmlspecialchars($_SESSION['nome']);
+$sobrenome = htmlspecialchars($_SESSION['sobrenome']);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,35 +23,32 @@ if (!isset($_SESSION['nome'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header> 
+    <header>
         <div class="social-bar">
             <div class="social-icones">
                 <a href="#" class="social-link" id="instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="social-link" id="facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="social-link" id="youtube"><i class="fa-brands fa-youtube"></i></a>  
+                <a href="#" class="social-link" id="youtube"><i class="fa-brands fa-youtube"></i></a>
             </div>
-
             <div class="social-login">
                 <button class="login">
                     <a href="logout.php">
                         <span class="texto-login">
-                        <i class="fa-solid fa-circle-user"></i>
-                            <?php echo $_SESSION['nome']; ?> <br>Sair 
+                            <i class="fa-solid fa-circle-user"></i>
+                            <?php echo $nome; ?> <br>Sair
                         </span>
                     </a>
                 </button>
             </div>
         </div>
-
-        <nav>       
+        <nav>
             <div class="logo">
-                <a href="#"><img src="assets/cln.png" alt="logo cln"></a>   
+                <a href="#"><img src="assets/cln.png" alt="logo cln"></a>
             </div>
-            
-            <div class="nav-list">            
+            <div class="nav-list">
                 <ul>
                     <li class="icone-home" id="home">
-                        <a href="#"><i class="fa-solid fa-house-chimney"></i></a> 
+                        <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
                     </li>
                     <li><a href="#">O colégio</a></li>
                     <li><a href="#" class="quem-somos">Quem somos</a></li>
@@ -62,14 +66,13 @@ if (!isset($_SESSION['nome'])) {
                         <div class="sub-menu">
                             <ul>
                                 <li><a href="#">Fale conosco</a></li>
-                                <li><a href="#">Faça parte da equipe</a></li>                            
+                                <li><a href="#">Faça parte da equipe</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li class="texto-matricula"><a href="#">Matrículas</a></li>  
+                    <li class="texto-matricula"><a href="#">Matrículas</a></li>
                 </ul>
-            </div>   
-            
+            </div>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -77,13 +80,11 @@ if (!isset($_SESSION['nome'])) {
             </div>
         </nav>
     </header>
-
     <main>
-
+        <!-- Conteúdo do usuário comum pode ir aqui -->
     </main>
-
     <script>
-        alert("Bem-vindo, <?php echo $_SESSION['nome'] . ' ' . $_SESSION['sobrenome']; ?>! Você está logado.");
+        alert("Bem-vindo, <?php echo $nome . ' ' . $sobrenome; ?>! Você está logado.");
     </script>
     <script src="script.js"></script>
 </body>
