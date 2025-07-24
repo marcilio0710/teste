@@ -1,11 +1,10 @@
 <?php
 session_start();
-include('db.php'); // Incluindo a conexão com o banco
+require_once('db.php'); // Incluindo a conexão com o banco
 
-// Verificar se foi enviado o comando para excluir um agendamento
+// Excluir agendamento
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    // Excluir agendamento
     $stmt = $pdo->prepare("DELETE FROM agendamentos WHERE id = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     if ($stmt->execute()) {
