@@ -5,6 +5,6 @@
       setcookie(session_name(), '', time()-42000, '/');
   }
   session_destroy();
-  header("Location: login.php");
+  header("Location: login.html");
   exit;
 
