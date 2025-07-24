@@ -2,7 +2,6 @@
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
 require_once('db.php'); // db.php deve criar $pdo via PDO
 
 // Verifica se está logado e é admin
@@ -36,65 +35,66 @@ try {
     <header>
         <div class="social-bar">
             <div class="social-icones">
-                    <a href="#" class="social-link" id="instagram">
+                <a href="#" class="social-link" id="instagram">
                     <i class="fa-brands fa-instagram"></i>
-                    </a>
+                </a>
                 <a href="#" class="social-link" id="facebook">
-                    <i class="fa-brands fa-facebook" ></i>
-                    </a>
-                    <a href="#" class="social-link" id="youtube">
-                    <i class="fa-brands fa-youtube" > </i>
-                    </a>
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="social-link" id="youtube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
             </div>
             <div class="social-login">
                 <button class="login">
-                    <a href="#">
+                    <a href="logout.php">
                         <span class="texto-login">
                             <i class="fa-solid fa-circle-user"></i>
-                            <?php echo $nome; ?> <br>Sair
+                            <?php echo htmlspecialchars($_SESSION['nome']); ?> <br>Sair
                         </span>
+                    </a>
                 </button>
             </div>
         </div>
         <nav>
-                <div class="logo">
-                    <a href="index.html">
-                        <h1>Logo</h1>
-                    </a>
-                </div>
-                <div class="nav-list">
-                    <ul>
-                        <li class="icone-home" id="home">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Logo</h1>
+                </a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="icone-home" id="home">
                         <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
-                        </li>
-                        <li><a href="#">'O colégio'</a></li>
-                        <li><a href="#" class="quem-somos">'Quem somos'</a></li>
-                        <li class="has-submenu"><a href="#">'Galeria'<span class="menu-arrow">▼</span></a>
-                            <div class="sub-menu">
-                                <ul>
-                                    <li><a href="#">Feira Literaria</a></li>
-                                    <li><a href="#">Cuturalmente</a></li>
-                                    <li><a href="#">Aprovados ENEM 2025</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">'Agenda'</a></li>
-                        <li class="has-submenu"><a href="#">'Contato'<span class="menu-arrow">▼</span></a>
-                            <div class="sub-menu">
-                                <ul>
-                                    <li><a href="#">Fale conosco</a></li>
-                                    <li><a href="#">Faça parte da equipe</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="texto-matricula"><a href="#">Matrículas</a></li>
-                    </ul>
-                </div>
-                <div class="mobile-menu">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+                    </li>
+                    <li><a href="#">O colégio</a></li>
+                    <li><a href="#" class="quem-somos">Quem somos</a></li>
+                    <li class="has-submenu"><a href="#">Galeria <span class="menu-arrow">▼</span></a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="#">Feira Literária</a></li>
+                                <li><a href="#">Culturalmente</a></li>
+                                <li><a href="#">Aprovados ENEM 2025</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Agenda</a></li>
+                    <li class="has-submenu"><a href="#">Contato <span class="menu-arrow">▼</span></a>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><a href="#">Fale conosco</a></li>
+                                <li><a href="#">Faça parte da equipe</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="texto-matricula"><a href="#">Matrículas</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
     </header>
     <main>
@@ -104,21 +104,21 @@ try {
             <?php if (empty($agendamentos)): ?>
                 <p>Nenhum agendamento encontrado.</p>
             <?php else: ?>
-            <table>
-                <tr>
-                    <?php foreach (array_keys($agendamentos[0]) as $coluna): ?>
-                        <th><?php echo htmlspecialchars($coluna); ?></th>
-                    <?php endforeach; ?>
-                </tr>
-                <?php foreach ($agendamentos as $linha): ?>
+                <table>
                     <tr>
-                        <?php foreach ($linha as $valor): ?>
-                            <td><?php echo htmlspecialchars($valor); ?></td>
+                        <?php foreach (array_keys($agendamentos[0]) as $coluna): ?>
+                            <th><?php echo htmlspecialchars($coluna); ?></th>
                         <?php endforeach; ?>
                     </tr>
-                <?php endforeach; ?>
-            </table>
-            <?php endif; ?>            
+                    <?php foreach ($agendamentos as $linha): ?>
+                        <tr>
+                            <?php foreach ($linha as $valor): ?>
+                                <td><?php echo htmlspecialchars($valor); ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php endif; ?>
         </div>
     </main>
     <script src="script.js"></script>
