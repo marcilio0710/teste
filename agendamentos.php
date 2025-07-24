@@ -50,9 +50,9 @@ try {
                 <button class="login">
                     <a href="#">
                         <span class="texto-login">
-                        <i class="fa-solid fa-circle-user"></i>
-                        Fazer Login</span>
-                    </a>
+                            <i class="fa-solid fa-circle-user"></i>
+                            <?php echo $nome; ?> <br>Sair
+                        </span>
                 </button>
             </div>
         </div>
@@ -118,8 +118,7 @@ try {
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <?php endif; ?>
-            <a class="logout" href="logout.php">Sair</a>
+            <?php endif; ?>            
         </div>
     </main>
     <script src="script.js"></script>
