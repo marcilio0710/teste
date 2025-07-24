@@ -1,3 +1,4 @@
+<?php
 $host = getenv('DB_HOST');
 $port = getenv('DB_PORT');
 $dbname = getenv('DB_NAME');
@@ -11,3 +12,4 @@ try {
     echo "Erro na conexão com o banco: " . $e->getMessage();
     exit();
 }
+?>
